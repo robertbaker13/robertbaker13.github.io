@@ -1,0 +1,30 @@
+main {
+  font-family: sans-serif;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 2em;
+  text-align: center;
+  color: black;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 1.2em;
+  text-align: center;
+  color: gray;
+}
+
+h4 {
+  font-weight: bold;
+  text-align: left;
+  margin-left: 5%;
+  width: 35%;
+}
+
+section {
+  text-align: left;
+  margin-left: 5%;
+  width: 35%;
+}
