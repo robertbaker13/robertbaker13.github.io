@@ -35,10 +35,10 @@ a:hover {
 
 }
 
-#right {
+#left {
   display: inline-block;
   position: absolute;
-  right: 0%;
+  left: 0%;
   bottom: 15%;
   top: 20%;
   height: 65%;
@@ -47,7 +47,7 @@ a:hover {
 
 #text {
   position: absolute;
-  left: 10%;
+  right: 10%;
   bottom: 15%;
   top: 20%;
   height: 65%;
