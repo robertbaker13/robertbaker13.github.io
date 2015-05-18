@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link type="css/stylesheet" rel="stylesheet" href="../blog-stylesheet.css"
+  </head>
+  <body>
+    <div id="top"><br>
+      <h1>R&nbsp&nbsp&nbspO&nbsp&nbsp&nbspB&nbsp&nbsp&nbspE&nbsp&nbsp&nbspR&nbsp&nbsp&nbspT&nbsp&nbsp&nbsp &nbsp&nbsp&nbspB&nbsp&nbsp&nbspA&nbsp&nbsp&nbspK&nbsp&nbsp&nbspE&nbsp&nbsp&nbspR</h1>
+      <h4>reading things & also writing things</h4>
+    </div>
+    <div id="left"><img src="../../imgs/seal.jpg" /></div>
+    <div id="text">
+      <h4>Arrays</h4>
+      <p>Arrays are magical beings.  At first it doesn't seem all that special, a series of numbers or bits of string (or any variety of other objects), each separated by commas, nestled between two cold, square brackets.  It seems a bit dull, really.</p>
+
+      <p>But how powerful they are!  Their size shrinks and grows to convenience.  The Standard Library has loads and loads of methods to use on them.  And if these don't suit our needs, we may write our own methods.</p>
+
+      <p>The thing that fascinates me is the notion of what a method <em>returns</em> versus the method's <em>side effects.</em>  This seems like an obvious distinction, but in practice it can be a little confusing.</p>
+
+      <p>The each method, for instance, always returns the original array it was called on.  The side effects - the things that our code makes happen during iteration - are the only things that matter.</p>
+
+      <p>On the other hand, the map method may return an array that is different from the original array.  This distinction means that, despite how similar these two methods are, it should be very obvious when we should use one or the other - do we need to return an array that is different from the original?  If not, avoid map.  Easy enough.</p>
+
+      <p>But in both cases, the <em>original</em> array remains the same.  This is true of most methods.  Calling reverse on an array will return an array that is different from the original, but the original remains the same.  Sometimes, methods that end in ! will actually change the original array.</p>
+
+      <p>To highlight the reverse method in action:</p>
+      <p><code>array1 = [1, 2, 3]</code></p>
+
+      <p><code>array1.reverse</code> RETURNS [3, 2, 1], but array1 is still [1, 2, 3].</p>
+      <p><code>array1.reverse!</code> also returns [3, 2, 1], but now array1 is [3, 2, 1].</p>
+
+      <p>In this case, we could think of <code>array1.reverse!</code> as being equivalent to <code>array1 = array1.reverse</code></p>
+
+      <p>This reflexive action implied by ! is not present in ALL methods that change the original array, however!  This was a mistake I made early on - I saw how reverse and reverse! differed and I assumed this was a way to tell something about method behaviors just from their naming convention.  Nope.</p>
+
+      <p>For instance, delete_if.  <code>array_1.delete_if { |x| x == 3 }</code> will return [1, 2], but it also changes array_1 to [1, 2].</p>
+
+      <p>Does anyone else react to this as a bit of a bummer?  It sure would be great if we knew something specific about the behavior of a method based purely on whether it ended in a particular punctuation mark…</p>
+    </div>
+    <div id="bottom">
+            <div class="button"><br><a href="#poems">poems</a></div>
+            <div class="button"><br><a href="../../index.html">home</a></div>
+            <div class="button"><br><a href="../cult_blog/index.html"./blog/tech_blog/index.html"">cultural blog</a></div>
+    </div>
+  </body>
+</html>
