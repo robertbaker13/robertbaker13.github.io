@@ -17,7 +17,7 @@ a:hover {
 
 
 #top {
-  position: absolute;
+  position: fixed;
   top: 0%;
   left: 0%;
   right: 0%;
@@ -26,7 +26,7 @@ a:hover {
 }
 
 #bottom {
-  position: absolute;
+  position: fixed;
   bottom: 0px;
   left: 0px;
   right: 0px;
@@ -37,7 +37,7 @@ a:hover {
 
 #left {
   display: inline-block;
-  position: absolute;
+  position: fixed;
   left: 0%;
   bottom: 15%;
   top: 20%;
@@ -70,4 +70,26 @@ h1 {
 h4 {
   color: gray;
   text-align: center;
+}
+
+table {
+  font-size: .9em;
+  text-align: center;
+  border: 1px solid black;
+}
+
+tr {
+  border: 1px solid black;
+}
+
+td {
+  border: 1px solid black;
+}
+
+.subhead {
+  background: lightgray;
+}
+
+.highlighted {
+  background: pink;
 }

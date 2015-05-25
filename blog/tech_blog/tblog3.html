@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link type="css/stylesheet" rel="stylesheet" href="../blog-stylesheet.css"
+  </head>
+  <body>
+    <div id="top"><br>
+      <h1>R&nbsp&nbsp&nbspO&nbsp&nbsp&nbspB&nbsp&nbsp&nbspE&nbsp&nbsp&nbspR&nbsp&nbsp&nbspT&nbsp&nbsp&nbsp &nbsp&nbsp&nbspB&nbsp&nbsp&nbspA&nbsp&nbsp&nbspK&nbsp&nbsp&nbspE&nbsp&nbsp&nbspR</h1>
+      <h4>reading things & also writing things</h4>
+    </div>
+    <div id="left"><img src="../../imgs/seal.jpg" /></div>
+    <div id="text">
+      <h4>'== true' (and why you shouldn't use it)</h4>
+      <p>I saw this line in some code one of my fellow students submitted to a group project we were working on together this week:</p>
+      <p><code>source.each {|x| found << x if x.to_s.include?(thing_to_find) == true}</code></p>
+      <p>Immediately, I thought, <code>== true</code> is redundant in this method.  Your <code>if</code> statement will correctly recognize a true or false return from the <code>.include?</code> method without it, since <code>.include?</code> always returns a boolean value.</p>
+      <p>Essentially, you're taking either a <code>true</code> or a <code>false</code> and then checking to see if they equal <code>true</code>:</p>
+      <p>&nbsp&nbsp&nbsptrue == true  &nbsp&nbsp&nbsp  =>  &nbsp&nbsp&nbsp true</p>
+      <p>&nbsp&nbsp&nbspfalse == true &nbsp&nbsp&nbsp  =>  &nbsp&nbsp&nbsp false</p>
+      <p>The code works just as well without it:</p>
+      <p><code>source.each {|key,value| found << key if value.to_s.include?(thing_to_find.to_s)}</code></p>
+      <br><br>
+      <p>But... I gave this some more thought. Initially I wanted to flatly say that <code>== true</code> is <em>never</em> necessary and should pretty much never appear in our code, but I've changed my mind.  I'd say it's <em>probably</em> not needed, but in special cases it might be valuable.</p>
+      <p>Since <code>if</code> statements evaluate all objects that aren't <code>nil</code> or <code>false</code> as true, when some other possible value might be returned, inserting <code>== true</code> at the end might be appropriate.</p>
+
+      <p>Here's a small chart of how <code>== true</code> would affect our control flow.</p>
+
+      <br><br>
+
+      <table>
+        <thead><code><strong>array << value if object.method?(argument)</strong></code></thead>
+
+        <tr class="subhead">
+          <td><code>.method?</code> returns:</td><td><code>if</code> statement evaluates as:</td>
+        </tr>
+
+        <tr>
+          <td><code>true</code></td><td><code>true</code> - <code>value</code> is pushed to array</td>
+        </tr>
+
+        <tr>
+          <td><code>false</code></td><td><code>false</code> - <code>value</code> is not pushed</td>
+        </tr>
+
+        <tr>
+          <td><code>nil</code></td><td><code>false</code> - <code>value</code> is not pushed</td>
+        </tr>
+
+        <tr class = "highlighted">
+          <td>
+            <strong><code>"anything else"</code></strong>
+          </td>
+          <td>
+            <strong><code>true</code> - <code>value</code> is pushed to array</strong>
+          </td>
+        </tr>
+      </table>
+
+      <br><br><br><br>
+
+      <table>
+        <thead><code><strong>array << value if object.method?(argument) == true</strong></code></thead>
+
+        <tr class="subhead">
+          <td><code>.method?</code> returns:</td><td><code>if</code> statement evaluates as:</td>
+        </tr>
+
+        <tr>
+          <td><code>true</code></td><td><code>true</code> - <code>value</code> is pushed to array</td>
+        </tr>
+
+        <tr>
+          <td><code>false</code></td><td><code>false</code> - <code>value</code> is not pushed</td>
+        </tr>
+
+        <tr>
+          <td><code>nil</code></td><td><code>false</code> - <code>value</code> is not pushed</td>
+        </tr>
+
+        <tr class = "highlighted">
+          <td>
+            <strong><code>"anything else"</code></strong>
+          </td>
+          <td>
+            <strong><code>false</code> - <code>value</code> is not pushed</strong>
+          </td>
+        </tr>
+
+      </table>
+
+      <br><br>
+
+      <p>I feel like this type of usage might introduce more problems than it would solve, though.  After all, why would one write code that seems to expect a boolean but isn't totally sure whether it's going to get one?  Clean code shouldn't need to rely on this kind of thing.</p>
+
+      <p>So rather than out-and-out saying one should never use <code>== true</code>, I think I'll soften my stance to something more like this:</p>
+
+      <br>
+
+      <p><em>While not explicitly unnecessary, <code>== true</code> is something to watch out for.  If you see it in your code, try to refactor in a way that doesn't require it.</em></p>
+
+      <br><br><br><br>
+
+    </div>
+    <div id="bottom">
+            <div class="button"><br><a href="#poems">poems</a></div>
+            <div class="button"><br><a href="../../index.html">home</a></div>
+            <div class="button"><br><a href="../cult_blog/index.html"./blog/tech_blog/index.html"">cultural blog</a></div>
+    </div>
+  </body>
+</html>
