@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link type="css/stylesheet" rel="stylesheet" href="../blog-stylesheet.css"
+  </head>
+  <body>
+    <div id="top"><br>
+      <h1>R&nbsp&nbsp&nbspO&nbsp&nbsp&nbspB&nbsp&nbsp&nbspE&nbsp&nbsp&nbspR&nbsp&nbsp&nbspT&nbsp&nbsp&nbsp &nbsp&nbsp&nbspB&nbsp&nbsp&nbspA&nbsp&nbsp&nbspK&nbsp&nbsp&nbspE&nbsp&nbsp&nbspR</h1>
+      <h4>reading things & also writing things</h4>
+    </div>
+    <div id="left"><img src="../../imgs/seal.jpg" /></div>
+    <div id="text">
+      <h4>Example Class - Liquor Bottles</h4>
+      <p>Classes are a powerful tool in Ruby - both because the built-in classes contain a tremendous amount of useful methods, and because we can build our own classes, complete with their own dedicated methods!</p>
+      <p>But when do we want to create a class of our own, instead of simply using the methods we've already learned? To me, the answer lies (as it so often does), in the principle of DRY - Don't Repeat Yourself.</p>
+      <p>We can try to think of Classes as representative of reality - a car is an instance of a class of automobile model, which is a subclass of a brand of cars, which are a subclass of vehicles, and so on - but this kind of thinking will always run up against limits.  No programming language can perfectly represent reality, nor should it - the programs we write will have specific tasks to accomplish, and it is best to think of the code as being in service of those tasks (narrow, focused, accomplishable goals), rather than trying to mimic the universe (expansive, overreaching, complex systems).</p>
+      <p>Let's use an example.  Say we're writing code as part of an inventory control system for bar managers.  These people have to keep track of hundreds of different types and brands of alcohol, all of which come in various bottles. Here's how we might write a class that each bottling can be an instance of:</p>
+      <p><code>class Liquor_Bottle<br>
+        <br>
+          attr_reader :size, :name, :category, :size_unit, :ounce_size<br>
+        <br>
+          &nbsp&nbspdef initialize(name, category, size, size_unit)<br>
+            &nbsp&nbsp&nbsp&nbsp@acceptable_sizes = ["ml", "oz", "L"]<br>
+            &nbsp&nbsp&nbsp&nbsp@name = name<br>
+            &nbsp&nbsp&nbsp&nbsp@category = category<br>
+            &nbsp&nbsp&nbsp&nbsp@size = size<br>
+            &nbsp&nbsp&nbsp&nbsp@size_unit = size_unit<br>
+            &nbsp&nbsp&nbsp&nbspraise ArgumentError.new("Not an approved size unit") <br>
+            &nbsp&nbsp&nbsp&nbspunless @acceptable_sizes.include?(@size_unit)<br>
+            &nbsp&nbsp&nbsp&nbspset_ounce_size<br>
+          &nbsp&nbspend<br>
+        <br>
+          &nbsp&nbspdef set_ounce_size<br>
+            &nbsp&nbsp&nbsp&nbspcase @size_unit<br>
+            &nbsp&nbsp&nbsp&nbspwhen "ml"<br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp@ounce_size = size * 0.033814<br>
+            &nbsp&nbsp&nbsp&nbspwhen "L"<br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp@ounce_size = size * 0.000033814<br>
+            &nbsp&nbsp&nbsp&nbspelse<br>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp@ounce_size = size<br>
+            &nbsp&nbsp&nbsp&nbspend<br>
+          &nbsp&nbspend<br>
+        <br>
+          &nbsp&nbspdef describe<br>
+            &nbsp&nbsp&nbsp&nbspputs "#{name} #{category} - #{size}#{size_unit}"<br>
+            &nbsp&nbsp&nbsp&nbspputs "(#{ounce_size} ounces)" if size_unit != "oz"<br>
+          &nbsp&nbspend<br>
+
+        end<br><br><br>
+
+        bulleit = Liquor_Bottle.new("Bulleit", "Bourbon", 750, "ml")
+        bulleit.describe</code></p>
+
+      <p>The manager might want to also know what each size means in a common measurement, so we included code to translate ml and liters into ounces.</p>
+      <p>This is just one example, but it should give the reader an idea what a class is used for.  Bottles have many properties that exist in reality that are irrelevant here - the density of the glass, the shape of the neck, the color of the label - but the class exists to serve the end user, who cares about how to organize and order alcohol, and what it costs per ounce.</p>
+      <br><br><br><br>
+      <br><br><br><br>
+
+
+    </div>
+    <div id="bottomright"></div>
+    <div id="bottom">
+            <div class="button"><br><a href="#poems">poems</a></div>
+            <div class="button"><br><a href="../../index.html">home</a></div>
+            <div class="button"><br><a href="../cult_blog/index.html"./blog/tech_blog/index.html"">cultural blog</a></div>
+    </div>
+  </body>
+</html>
