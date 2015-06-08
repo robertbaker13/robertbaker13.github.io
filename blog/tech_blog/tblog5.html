@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link type="css/stylesheet" rel="stylesheet" href="../blog-stylesheet.css"
+  </head>
+  <body>
+    <div id="top"><br>
+      <h1>R&nbsp&nbsp&nbspO&nbsp&nbsp&nbspB&nbsp&nbsp&nbspE&nbsp&nbsp&nbspR&nbsp&nbsp&nbspT&nbsp&nbsp&nbsp &nbsp&nbsp&nbspB&nbsp&nbsp&nbspA&nbsp&nbsp&nbspK&nbsp&nbsp&nbspE&nbsp&nbsp&nbspR</h1>
+      <h4>reading things & also writing things</h4>
+    </div>
+    <div id="left"><img src="../../imgs/seal.jpg" /></div>
+    <div id="text">
+      <h4>Variable Scope in Ruby</h4>
+      <p>
+        Variables come in a few varieties in Ruby:
+      </p>
+      <ul>
+        <li><code>variable_name</code> - <em>local variable</em> -  Written in lower case, local variables are local to wherever they appear in code. They are not accessible across methods, and are sometimes even smaller in scope than that - accessible only inside of a block or a loop, for instance.  </li>
+        <li><code>@variable_name</code> - <em>instance variable</em> - Written with a leading '@' symbol, instance variables are local to an instance of a class.  Other instances of the same class do not have access, but all methods within the local instance may access them.</li>
+        <li><code>@@variable_name</code> - <em>class variable</em> - Written with two leading '@' symbols, class variables are local to an entire class.  Every instance of the class may access them, but not objects outside that class.</li>
+        <li><code>$variable_name</code> - <em>global variable</em> - Writte with a leading '$' symbol, global variables are accessible anywhere in the code in which they appear, regardless of what class or method they are declared in. </li>
+        <li><code>VARIABLE_NAME</code> - <em>constant</em> - Constants' scope depends on where they are declared - usually they are declared in 'main,' which, in most cases means they act like global variables, but there are exceptions to this.  They are meant to remain unchanged, although, like variables, Ruby <em>will</em> let you change their value, but it will throw a warning when you do. Constants begin with a capital letter, although it is common syntax to spell them with all caps.</li>
+      </ul>
+
+      <br><br><br><br>
+      <br><br><br><br>
+
+
+    </div>
+    <div id="bottomright"></div>
+    <div id="bottom">
+            <div class="button"><br><a href="#poems">poems</a></div>
+            <div class="button"><br><a href="../../index.html">home</a></div>
+            <div class="button"><br><a href="../cult_blog/index.html"./blog/tech_blog/index.html"">cultural blog</a></div>
+    </div>
+  </body>
+</html>
