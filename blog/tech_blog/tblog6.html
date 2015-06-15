@@ -12,7 +12,7 @@
     <div id="left"><img src="../../imgs/seal.jpg" /></div>
     <div id="text">
       <h4>Looping in Ruby vs JavaScript</h4>
-      <p>The most common type of loop that we've encountered in JavaScript so far is for <code>for</code> loop:</p>
+      <p>The most common type of loop that we've encountered in JavaScript so far is the <code>for</code> loop:</p>
       <p>
         <code>
           for(var i = 0; i < 10; i++) {<br>
@@ -30,7 +30,7 @@
       <p>In addition to the <code>each</code> loop not needing to be explicitly told how to structure its looping mechanism (declaring a variable, setting start, end, and increment values), we are able to locally define a variable <code>item</code> that will represent each item in the array as the code is looped.  To do this in JavaScript:</p>
       <p>
         <code>
-          for(var i = 0; i < array.length; i ++) {<br>
+          for(var i = 0; i < array.length; i++) {<br>
           &nbsp&nbsp  var item = array[i]<br>
           &nbsp&nbsp  code_to_be_looped<br>
         };<br>
@@ -55,30 +55,30 @@
       <p>
         <code>
           2.2.1 :001 > for i in 0...10<br>
-          2.2.1 :002?>   print "i: #{i}"<br>
+          2.2.1 :002?>   print "i: #{i} "<br>
           2.2.1 :003?>   end<br>
-          i: 0i: 1i: 2i: 3i: 4i: 5i: 6i: 7i: 8i: 9 => 0...10 <br>
+          i: 0 i: 1 i: 2 i: 3 i: 4 i: 5 i: 6 i: 7 i: 8 i: 9 => 0...10 <br>
           <br><br>
-          2.2.1 :001 > (0...10).each { |i| print "i: #{i}" }<br>
-          i: 0i: 1i: 2i: 3i: 4i: 5i: 6i: 7i: 8i: 9 => 0...10 <br>
+          2.2.1 :001 > (0...10).each { |i| print "i: #{i} " }<br>
+          i: 0 i: 1 i: 2 i: 3 i: 4 i: 5 i: 6 i: 7 i: 8 i: 9 => 0...10 <br>
         </code>
       </p>
-      <p>Seems about the same, right?  I guess one is interchangable with the other.  Unless we check the value of <code>i</code>...</p>
+      <p>Seems about the same, right?  I guess one is interchangable with the other.  Unless... let's just check for the residual value of <code>i</code>:</p>
       <p>
         <code>
           2.2.1 :001 > for i in 0...10<br>
-          2.2.1 :002?>   print "i: #{i}"<br>
+          2.2.1 :002?>   print "i: #{i} "<br>
           2.2.1 :003?>   end<br>
-          i: 0i: 1i: 2i: 3i: 4i: 5i: 6i: 7i: 8i: 9 => 0...10 <br>
+          i: 0 i: 1 i: 2 i: 3 i: 4 i: 5 i: 6 i: 7 i: 8 i: 9 => 0...10 <br>
           2.2.1 :004 > print i<br>
           9 => nil <br>
           <br><br>
-          2.2.1 :001 > (0...10).each { |i| print "i: #{i}" }<br>
-          i: 0i: 1i: 2i: 3i: 4i: 5i: 6i: 7i: 8i: 9 => 0...10 <br>
+          2.2.1 :001 > (0...10).each { |i| print "i: #{i} " }<br>
+          i: 0 i: 1 i: 2 i: 3 i: 4 i: 5 i: 6 i: 7 i: 8 i: 9 => 0...10 <br>
           2.2.1 :002 > print i<br>
           NameError: undefined local variable or method `i' for main:Object<br>
             from (irb):2<br>
-            from /Users/bobby/.rvm/rubies/ruby-2.2.1/bin/irb:11:in `<main>'<br>
+            from /Users/bobby/.rvm/rubies/ruby-2.2.1/bin/irb:11:in `\<main>'<br>
         </code>
       </p>
       <p>This is the other reason why the <code>for</code> loop is discouraged in Ruby. The variable declared as a counter is not local to the loop - it persists after the loop has finished!  This could have unintended consequences and should be avoided unless we intend on using the persistent variable for another purpose.<p>
