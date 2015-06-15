@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <link type="css/stylesheet" rel="stylesheet" href="../blog-stylesheet.css"
+  </head>
+  <body>
+    <div id="top"><br>
+      <h1>R&nbsp&nbsp&nbspO&nbsp&nbsp&nbspB&nbsp&nbsp&nbspE&nbsp&nbsp&nbspR&nbsp&nbsp&nbspT&nbsp&nbsp&nbsp &nbsp&nbsp&nbspB&nbsp&nbsp&nbspA&nbsp&nbsp&nbspK&nbsp&nbsp&nbspE&nbsp&nbsp&nbspR</h1>
+      <h4>reading things & also writing things</h4>
+    </div>
+    <div id="left"><img src="../../imgs/seal.jpg" /></div>
+    <div id="text">
+      <h4>Looping in Ruby vs JavaScript</h4>
+      <p>The most common type of loop that we've encountered in JavaScript so far is for <code>for</code> loop:</p>
+      <p>
+        <code>
+          for(var i = 0; i < 10; i++) {<br>
+          &nbsp&nbsp  code_to_be_looped<br>
+          };<br>
+        </code>
+      </p>
+      <p>This structure is concise and clean, and flexible enough to automatically repeat a simple task or to iterate through an arra.</p>
+      <p>While in Ruby, on the other hand, <code>for</code> loops are available to us but are discouraged, for two significant reasons.  The first reason, which is ample enough to cover almost all uses on its own, is that Ruby has other built-in methods that more specifically (and concisely) do what we would want a <code>for</code> loop to be written for in the first place.  <code>each</code>, for example, iterates through arrays with less code than a for loop would require:</p>
+      <p>
+        <code>
+          array.each { |item| code_to_be_looped }<br>
+        </code>
+      </p>
+      <p>In addition to the <code>each</code> loop not needing to be explicitly told how to structure its looping mechanism (declaring a variable, setting start, end, and increment values), we are able to locally define a variable <code>item</code> that will represent each item in the array as the code is looped.  To do this in JavaScript:</p>
+      <p>
+        <code>
+          for(var i = 0; i < array.length; i ++) {<br>
+          &nbsp&nbsp  var item = array[i]<br>
+          &nbsp&nbsp  code_to_be_looped<br>
+        };<br>
+        </code>
+      </p>
+      <p>The simpler syntax of Ruby's iterator <code>each</code> leaves less room for error.  It is elegant and terse.</p>
+      <p>Ruby <em>does</em> have a lovely <code>for</code> loop, however, in case <code>each</code> leaves you wanting more control over the details of your looping structure:</p>
+      <p>
+        <code>
+          for i in 0...10<br>
+          &nbsp&nbsp  code_to_be_looped<br>
+          end<br>
+        </code>
+      </p>
+      <p>Since Ruby uses the two dot (<code>..</code>) and three dot (<code>...</code>) operators to create special Range objects (which is how we're able to write this <code>for</code> loop so simply, we could just as easily write this:</p>
+      <p>
+        <code>
+          (0...10).each { |i| code_to_be_looped }<br>
+        </code>
+      </p>
+      <p>In fact, what's the difference between the two?  Is there any?  Let's run them both in irb and see how they behave:</p>
+      <p>
+        <code>
+          2.2.1 :001 > for i in 0...10<br>
+          2.2.1 :002?>   print "i: #{i}"<br>
+          2.2.1 :003?>   end<br>
+          i: 0i: 1i: 2i: 3i: 4i: 5i: 6i: 7i: 8i: 9 => 0...10 <br>
+          <br><br>
+          2.2.1 :001 > (0...10).each { |i| print "i: #{i}" }<br>
+          i: 0i: 1i: 2i: 3i: 4i: 5i: 6i: 7i: 8i: 9 => 0...10 <br>
+        </code>
+      </p>
+      <p>Seems about the same, right?  I guess one is interchangable with the other.  Unless we check the value of <code>i</code>...</p>
+      <p>
+        <code>
+          2.2.1 :001 > for i in 0...10<br>
+          2.2.1 :002?>   print "i: #{i}"<br>
+          2.2.1 :003?>   end<br>
+          i: 0i: 1i: 2i: 3i: 4i: 5i: 6i: 7i: 8i: 9 => 0...10 <br>
+          2.2.1 :004 > print i<br>
+          9 => nil <br>
+          <br><br>
+          2.2.1 :001 > (0...10).each { |i| print "i: #{i}" }<br>
+          i: 0i: 1i: 2i: 3i: 4i: 5i: 6i: 7i: 8i: 9 => 0...10 <br>
+          2.2.1 :002 > print i<br>
+          NameError: undefined local variable or method `i' for main:Object<br>
+            from (irb):2<br>
+            from /Users/bobby/.rvm/rubies/ruby-2.2.1/bin/irb:11:in `<main>'<br>
+        </code>
+      </p>
+      <p>This is the other reason why the <code>for</code> loop is discouraged in Ruby. The variable declared as a counter is not local to the loop - it persists after the loop has finished!  This could have unintended consequences and should be avoided unless we intend on using the persistent variable for another purpose.<p>
+      <p>(As a footnote, keep in mind that the above examples are two <em>separate</em> irb sessions - the <code>each</code> loop doesn't obliterate the previous variable <code>i</code>, but it does destroy its own upon completion.)</p>
+
+      <br><br><br><br>
+      <br><br><br><br>
+
+
+    </div>
+    <div id="bottomright"></div>
+    <div id="bottom">
+            <div class="button"><br><a href="#poems">poems</a></div>
+            <div class="button"><br><a href="../../index.html">home</a></div>
+            <div class="button"><br><a href="../cult_blog/index.html"./blog/tech_blog/index.html"">cultural blog</a></div>
+    </div>
+  </body>
+</html>
