@@ -78,7 +78,7 @@
           2.2.1 :002 > print i<br>
           NameError: undefined local variable or method `i' for main:Object<br>
             from (irb):2<br>
-            from /Users/bobby/.rvm/rubies/ruby-2.2.1/bin/irb:11:in `\<main>'<br>
+            from /Users/bobby/.rvm/rubies/ruby-2.2.1/bin/irb:11:in `&ltmain>'<br>
         </code>
       </p>
       <p>This is the other reason why the <code>for</code> loop is discouraged in Ruby. The variable declared as a counter is not local to the loop - it persists after the loop has finished!  This could have unintended consequences and should be avoided unless we intend on using the persistent variable for another purpose.<p>
