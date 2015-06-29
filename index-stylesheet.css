@@ -1,5 +1,9 @@
+
 html {
   font-family: sans-serif;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
 a:link {
@@ -75,6 +79,24 @@ a:hover {
   font-size: 30px;
   font-weight: bold;
 }
+
+.pink {
+  height: 100%;
+  border-radius: 3px;
+  background-color: pink;
+}
+
+.front {
+  position: fixed;
+  overflow: auto;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background-color: gray;
+  opacity: 1;
+}
+
 
 h1 {
   text-align: center;
