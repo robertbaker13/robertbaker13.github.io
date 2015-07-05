@@ -11,7 +11,6 @@ header {
   left: 0%;
   right: 0%;
   height: 20%;
-  background-color: blue;
 }
 
 footer {
@@ -21,7 +20,16 @@ footer {
   right: 0px;
   height: 15%;
   width: 100%;
-  background-color: red;
-
 }
 
+.center {
+  background-color: red;
+}
+
+.left {
+  background-color: blue;
+}
+
+.right {
+  background-color: green;
+}
