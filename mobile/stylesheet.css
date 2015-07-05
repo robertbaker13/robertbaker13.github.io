@@ -1,13 +1,27 @@
+html {
+  font-family: sans-serif;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;      /* switch back to hidden */
+}
+
 header {
   position: fixed;
-  width:100%;
+  top: 0%;
+  left: 0%;
+  right: 0%;
   height: 20%;
-  background-color: green;
+  background-color: blue;
 }
 
 footer {
   position: fixed;
-  width:100%;
-  height: 20%;
-  background-color: blue;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 15%;
+  width: 100%;
+  background-color: red;
+
 }
+
