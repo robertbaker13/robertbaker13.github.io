@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 
   $('header').on("swipe",function(){
-    $(this).hide();
+    $(this).toggleClass("center left");
   });
 
 
