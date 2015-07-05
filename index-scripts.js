@@ -20,6 +20,10 @@ $( document ).ready(function() {
     return newTable + "</table>"
   }
 
+  var change_color = function(object, new_color) {
+    $(object).animate({color: new_color}, 5000, function() {});
+  }
+
   var raindrops = function() {
     var number = 10000
     while(number > 0) {
@@ -31,14 +35,24 @@ $( document ).ready(function() {
       number--;
     }
     $('.front').animate({opacity: 0}, 10000, function() {
-    $('html').css('overflow', 'visible');
+      $(this).remove();
     });
   }
 
-  $('body').append(populatedTable());
+  // $('body').append(populatedTable());
 
-  $(document).click(function() {
+  $('.pink').click(function(){
+    $(this).toggleClass('pink grey');
+  });
+
+  $('.front').dblclick(function() {
       raindrops();
+  });
+
+  $('#games').click(function() {
+    $(this).css('background-color', 'black');
+    $('#drawing').toggleClass('right_column left_column');
+    $('#main_text').toggleClass('right_column' 'left_column');
   });
 
 });
