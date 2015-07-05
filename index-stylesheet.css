@@ -5,30 +5,31 @@ html {
     overflow: hidden;      /* switch back to hidden */
 }
 
-a:link {
+.button {
+  display: inline-block;
   text-decoration: none;
+  text-align: center;
   color: black;
+  height: 100%;
+  width: 30%;
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 20px;
 }
 
-a:visited {
+.button:hover {
   color: gray;
 }
 
-a:hover {
-  color: darkgray;
-}
-
-#header {
+header {
   position: fixed;
   top: 0%;
   left: 0%;
   right: 0%;
   height: 20%;
-  width: 100%;
-  background: white;
 }
 
-#bottom {
+footer {
   position: fixed;
   bottom: 0px;
   left: 0px;
@@ -40,15 +41,20 @@ a:hover {
 #drawing {
   display: inline-block;
   position: fixed;
-  right: 0%;
   top: 20%;
   height: 65%;
   width: 60%;
+  min-width: 900px;
+  z-index: -3;
+}
+
+.right {
+  right: 0%;
 }
 
 #main_text {
-  position: absolute;
-  left: 10%;
+  display: inline-block;
+  position: fixed;
   top: 20%;
   height: 65%;
   width: 30%;
@@ -56,22 +62,8 @@ a:hover {
   overflow: scroll;
 }
 
-.right_column{
-
-}
-
-.left_column {
-
-}
-
-
-.button {
-  display: inline-block;
-  text-align: center;
-  height: 100%;
-  width: 30%;
-  font-size: 30px;
-  font-weight: bold;
+.left {
+  left: 10%;
 }
 
 .pink {
