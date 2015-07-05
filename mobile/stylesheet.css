@@ -1,35 +1,72 @@
 html {
   font-family: sans-serif;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;      /* switch back to hidden */
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
 }
 
 header {
-  position: fixed;
-  top: 0%;
-  left: 0%;
-  right: 0%;
-  height: 20%;
+  order: 1;
+  flex: 1 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
+#keypad {
+  order: 2;
+  flex: 5 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items:center
+  align-content: stretch;
+}
+
+.button_row {
+  flex 1 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: stretch;
+}
+
+.big_button {
+  flex 1 0 auto;
+  margin: 2px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid black;
+}
+
+.small_button {
+  flex 1 0 auto;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.button_label {
+  font-size: 20px;
+
+}
+
+.button_subtext {
+}
+
 
 footer {
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  height: 15%;
-  width: 100%;
-}
-
-.center {
-  background-color: red;
-}
-
-.left {
-  background-color: blue;
-}
-
-.right {
-  background-color: green;
+  order: 3;
+  flex: 1 0 auto;
 }
